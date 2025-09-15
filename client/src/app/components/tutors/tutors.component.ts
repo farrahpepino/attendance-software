@@ -9,4 +9,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class TutorsComponent {
 
+  onSelect(event: Event){
+    (event.target as HTMLSelectElement).selectedIndex = -1;
+  }
 }

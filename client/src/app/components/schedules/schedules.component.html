@@ -1,35 +1,128 @@
 <app-navbar />
-<br />
-<button type="button" class="btn">Add tutor</button>
-
+<div class="container">
+    <button type="button" class="btn right">Add tutor</button>
 <!-- change to table later -->
-<div class="content">
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+    <div class="content">
+        <div>
+            <div class="item flex">
+                <button class="btn">Mon</button>
+                <button class="btn">Tue</button>
+                <button class="btn">Wed</button>
+                <button class="btn">Thurs</button>
+                <button class="btn">Fri</button>
+                <button class="btn">Sat</button>
+                <button class="btn">Sun</button>
+            </div>
+            <br><br><br>
+            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+        </div>
+    </div>
 </div>
 
-
 <div class="add-form flex col">
+    <br>
     <label for="name"><span>Name</span>
         <input type="text"/> 
     </label>
-    <label for="shift-1"><span>Shift 1</span>
-        <input type="text"/> 
-    </label>
-    <label for="shift-2"><span>Shift 2</span>
-        <input type="text"/> 
-    </label>
-    <label for="shift-3"><span>Shift 3</span>
-        <input type="text"/> 
-    </label>
-    <label for="break"><span>Break</span>
-        <input type="text"/> 
-    </label>
+
+    <!-- Monday -->
+    <div class="page active" data-day="1">
+        <br />
+        <strong>Monday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Tuesday -->
+    <div class="page" data-day="2">
+        <br />
+        <strong>Tuesday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Wednesday -->
+    <div class="page" data-day="3">
+        <br />
+        <strong>Wednesday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Thursday -->
+    <div class="page" data-day="4">
+        <br />
+        <strong>Thursday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Friday -->
+    <div class="page" data-day="5">
+        <br />
+        <strong>Friday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Saturday -->
+    <div class="page" data-day="5">
+        <br />
+        <strong>Saturday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <!-- Sunday -->
+    <div class="page" data-day="5">
+        <br />
+        <strong>Sunday</strong>
+        <br />
+        <br />
+        <label><span>Shift 1</span><input type="text"></label>
+        <label><span>Shift 2</span><input type="text"></label>
+        <label><span>Shift 3</span><input type="text"></label>
+        <label><span>Break</span><input type="text"></label>
+    </div>
+
+    <br>
+    <div class="pagination-controls center">
+        <button type="button" id="prev" class="btn-transparent"><</button>
+        <button type="button" id="next" class="btn-transparent">></button>
+    </div>
+    <br>
+    
     <div class="flex gap-10 right">
         <button type="button" class="btn btn-red red">cancel</button>
         <button type="button" class="btn btn-green green">add</button>
     </div>
+
 </div>

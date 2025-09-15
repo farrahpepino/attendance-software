@@ -1,6 +1,6 @@
 roles:
 - admin: add user to the database, send generated code to user
-- user: update attendance, email admin to call out
+- tutors: update attendance, email admin to call out
 
 Entity Framework ORM
 .NET Core (C#)

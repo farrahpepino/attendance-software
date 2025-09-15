@@ -1,6 +1,15 @@
 <app-navbar />
-<br />
-
-<div class="content">
-    <div class="item flex"> <strong>Farrah Pepino</strong> <div class="flex"><div class="circle bg-green"></div> <button>option</button></div></div>
+<div class="container">
+    <br>
+    <strong>Tutors</strong>
+    <div class="content">
+        <div class="item flex"> <strong>Farrah Pepino</strong> <div class="flex"><div class="circle bg-green"></div> 
+        <select id="dropdown" aria-label="Choose action" (change)="onSelect($event)">
+            <option disabled selected hidden></option>
+            <option value="present">Mark present</option>
+            <option value="absent">Mark absent</option>
+            <option value="remove">Remove tutor</option>
+        </select>
+    </div></div>
+    </div>
 </div>

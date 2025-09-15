@@ -1,13 +1,21 @@
 .add-form{
-    background-color: rgb(0,0,0, 0.06);
-    width: 350px;
-    height: 250px;
+    background-color: #D9D9D9;
+    width: 60%;
+    height: 380px;
     border-radius: 12px;
     padding: 12px;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 5;
+    visibility: hidden;
 }
 
 .content{
-    margin-top: 50px;
+    margin-top: 40px;
+    z-index: 1;
 }
 
 .item{
@@ -18,4 +26,11 @@
 
 .flex{
     display: flex;
+}
+
+@media(max-width:400px){
+    .add-form{
+        width: 350px;
+        height: 380px;
+    }
 }

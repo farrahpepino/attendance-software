@@ -96,10 +96,42 @@ input {
     outline-color: #003A6B;
 }
 
-.right{
-    text-align: right;
-}
 
 .gap-10{
     gap: 10px;
+}
+
+.page { display: none; }
+
+.page.active { display: block; }
+
+.pagination-controls {
+    display: flex;
+    gap: 20px;
+}
+
+.pagination-controls button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: rgb(255,255,255, 0.9);
+    background-color: rgb(0,0,0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.container{
+    width: 100%;
+    margin: 20px;
+}
+
+select{
+    width: 30px;
+    border: none;
+    outline: none;
 }
