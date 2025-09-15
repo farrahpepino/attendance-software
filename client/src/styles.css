@@ -1,0 +1,104 @@
+body{
+    font-family: Arial;
+    font-size: 1rem;
+    margin: 0;
+}
+
+button{
+    font-size: 1rem;
+}
+
+.btn{
+    padding: 8px 0px;
+    width: 80px;
+    border-radius: 16px;
+    border: solid 1px #003A6B;
+    background-color: transparent;
+}
+
+.btn-red{
+    padding: 8px 0px;
+    width: 80px;
+    border-radius: 16px;
+    border: solid 1px red;
+    background-color: transparent;
+}
+
+.btn-green{
+    padding: 8px 0px;
+    width: 80px;
+    border-radius: 16px;
+    border: solid 1px green;
+    background-color: transparent;
+}
+
+.btn-transparent{
+    background: transparent;
+    border: none;
+}
+
+.red{
+    color: red;
+}
+
+.white{
+    color: rgb(255,255,255, 0.9);
+}
+
+.gray{
+    color: #A9A9A9;
+}
+
+.green{
+    color: green;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.flex{
+    display: flex;
+}
+
+.col{
+    flex-direction: column;
+}
+
+label{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+
+label span {
+    min-width: 80px; 
+}
+  
+input {
+    width: 700px;
+    padding: 8px;
+    border-radius: 16px;
+    border: solid 1px #003A6B;
+    background-color: transparent;
+}
+
+.right{
+    text-align: right;
+}
+
+.gap-10{
+    gap: 10px;
+}

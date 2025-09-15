@@ -1,0 +1,13 @@
+.content{
+    margin-top: 50px;
+}
+
+.item{
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+.flex{
+    display: flex;
+}
