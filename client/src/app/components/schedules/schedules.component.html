@@ -1,17 +1,55 @@
 <app-navbar />
 <div class="container">
-    <button type="button" class="btn right">Add tutor</button>
-<!-- change to table later -->
+    <div class="flex">
+        <button type="button" class="btn-blue white" (click)="viewForm()">+ tutor</button>
+    </div>
+    <br>
+    <strong class="center">Schedules</strong>
     <div class="content">
         <div>
             <div class="item flex">
-                <button class="btn">Mon</button>
-                <button class="btn">Tue</button>
-                <button class="btn">Wed</button>
-                <button class="btn">Thurs</button>
-                <button class="btn">Fri</button>
-                <button class="btn">Sat</button>
-                <button class="btn">Sun</button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 1}"
+                (click)="selectDay(1)">
+                    Mon
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 2}"
+                (click)="selectDay(2)">
+                    Tue
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 3}"
+                (click)="selectDay(3)">
+                    Wed
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 4}"
+                (click)="selectDay(4)">
+                    Thurs
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 5}"
+                (click)="selectDay(5)">
+                    Fri
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 6}"
+                (click)="selectDay(6)">
+                    Sat
+                </button>
+                <button 
+                class="btn"     
+                [ngClass]="{'active': activeDay === 7}"
+                (click)="selectDay(7)">
+                    Sun
+                </button>
             </div>
             <br><br><br>
             <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
@@ -23,17 +61,18 @@
     </div>
 </div>
 
-<div class="add-form flex col">
+<div class="add-form flex col" [class.hidden]="!showForm">
     <br>
+    <strong>Add a tutor</strong>
+    <br><br>
     <label for="name"><span>Name</span>
         <input type="text"/> 
     </label>
 
     <!-- Monday -->
     <div class="page active" data-day="1">
-        <br />
-        <strong>Monday</strong>
-        <br />
+        <br /> <br />
+        <strong class="center">Monday</strong>
         <br />
         <label><span>Shift 1</span><input type="text"></label>
         <label><span>Shift 2</span><input type="text"></label>
@@ -115,14 +154,14 @@
 
     <br>
     <div class="pagination-controls center">
-        <button type="button" id="prev" class="btn-transparent"><</button>
-        <button type="button" id="next" class="btn-transparent">></button>
+        <button type="button" id="prev" class="btn-transparent"  mat-icon-button><mat-icon>arrow_back</mat-icon></button>
+        <button type="button" id="next" class="btn-transparent"  mat-icon-button><mat-icon>arrow_forward</mat-icon></button>
     </div>
     <br>
     
-    <div class="flex gap-10 right">
-        <button type="button" class="btn btn-red red">cancel</button>
-        <button type="button" class="btn btn-green green">add</button>
+    <div class="flex gap-10 end">
+        <button type="button" class="btn btn-red" (click)="hideForm()">cancel</button>
+        <button type="button" class="btn-blue white">add</button>
     </div>
 
-</div>
+</div> 

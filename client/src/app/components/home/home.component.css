@@ -1,4 +1,13 @@
-.container{
-    width: 100%;
-    margin: 20px;
+
+.content{
+    margin-top: 50px;
 }
+
+.item{
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 10px;    
+}
+
+
+

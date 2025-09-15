@@ -8,5 +8,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  onSelect(event: Event){
+    (event.target as HTMLSelectElement).selectedIndex = -1;
+  }
 }

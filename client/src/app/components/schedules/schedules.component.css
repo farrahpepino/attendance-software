@@ -1,7 +1,7 @@
 .add-form{
-    background-color: #D9D9D9;
+    background-color: #F0F0F0;
     width: 60%;
-    height: 380px;
+    height: 470px;
     border-radius: 12px;
     padding: 12px;
     position: fixed; 
@@ -10,6 +10,10 @@
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     z-index: 5;
+    visibility: visible;
+}
+
+.add-form.hidden{
     visibility: hidden;
 }
 

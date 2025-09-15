@@ -16,11 +16,46 @@ button{
     background-color: transparent;
 }
 
-.btn-red{
+.btn:hover{
+    background-color: #003A6B;
+    color: rgb(255,255,255, 0.9);
+}
+
+.btn.active{
+    background-color: #003A6B;
+    color: rgb(255,255,255, 0.9);
+}
+
+.btn-blue{
     padding: 8px 0px;
     width: 80px;
     border-radius: 16px;
+    border: solid 1px #003A6B;
+    background-color: #003A6B;
+}
+
+.btn-blue:hover{
+    background-color: transparent;
+    color: black;
+}
+
+
+.btn-red:hover{
+    color: red;
+    background-color: transparent;
+}
+
+.btn-red{
+    padding: 8px 0px;
+    width: 80px;
     border: solid 1px red;
+    border-radius: 16px;
+    color: rgb(255,255,255, 0.9);
+    background-color: red;
+}
+
+.btn-green:hover{
+    border: solid 1px green;
     background-color: transparent;
 }
 
@@ -29,7 +64,8 @@ button{
     width: 80px;
     border-radius: 16px;
     border: solid 1px green;
-    background-color: transparent;
+    color: rgb(255,255,255, 0.9);
+    background-color: green;
 }
 
 .btn-transparent{
@@ -71,6 +107,10 @@ button{
     display: flex;
 }
 
+.v-center{
+    align-items: center;
+}
+
 .col{
     flex-direction: column;
 }
@@ -81,7 +121,6 @@ label{
     margin-bottom: 8px;
     align-items: center;
 }
-
 
 label span {
     min-width: 80px; 
@@ -95,7 +134,6 @@ input {
     background-color: transparent;
     outline-color: #003A6B;
 }
-
 
 .gap-10{
     gap: 10px;
@@ -111,9 +149,10 @@ input {
 }
 
 .pagination-controls button {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
+    border: none;
     color: rgb(255,255,255, 0.9);
     background-color: rgb(0,0,0, 0.3);
     display: flex;
@@ -121,8 +160,15 @@ input {
     align-items: center;
 }
 
+.pagination-controls button:hover {
+    color: rgb(255,255,255, 0.9);
+    background-color: rgb(0,0,0, 0.1);
+}
+
+
 .center{
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .container{
@@ -131,7 +177,13 @@ input {
 }
 
 select{
-    width: 30px;
+    width: 35px;
     border: none;
     outline: none;
 }
+
+.end {
+    justify-content: right;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
