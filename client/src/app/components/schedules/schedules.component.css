@@ -17,6 +17,10 @@
     visibility: hidden;
 }
 
+button:disabled{
+    background-color: rgb(0,0,0,0.1);
+}
+
 .content{
     margin-top: 40px;
     z-index: 1;

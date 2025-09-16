@@ -12,6 +12,7 @@ import { Day } from '../../models/Day';
   styleUrl: './schedules.component.css',
   standalone: true
 })
+
 export class SchedulesComponent {
   showForm = false;
   activeDay = 1;
@@ -41,28 +42,19 @@ export class SchedulesComponent {
     this.activeDay = day;
   }
 
-  prevPage() {
-    if (this.activeDay > 1) this.activeDay--;
-  }
-
-  nextPage() {
-    if (this.activeDay < this.days.length) this.activeDay++;
-  }
-
   isActive(day: number): boolean {
     return this.activeDay === day;
   }
 
   submitForm(event: Event){
-    alert('Form submitted!');
     this.showForm = false;
   }
 
-  prev(){
+  prevPage(){
     if (this.currentDay > 1) this.currentDay--;
   }
-  forward(){
+  
+  nextPage(){
     if (this.currentDay >= 1) this.currentDay++;
-    if (this.currentDay>=8) this.currentDay=1;
   }
 }

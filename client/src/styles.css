@@ -45,6 +45,10 @@ select{
     background-color: red;
 }
 
+.blue{
+    color: #003A6B;
+}
+
 .btn{
     padding: 8px 0px;
     width: 80px;
@@ -177,6 +181,10 @@ select{
 
 .red{
     color: red;
+}
+
+.subtext {
+    font-size: 14px;
 }
 
 .v-center{
