@@ -16,11 +16,11 @@
                 </button>
             </div>
             <br><br><br>
-            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
-            <div class="item flex"> <strong>Farrah Pepino</strong> <div>8:00 pm - 9:00 pm</div> | <div class="gray">9:00 pm - 9:30 pm</div> | <div>9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong class="name">Farrah Pepino</strong> <div class="time">98:00 pm - 19:00 pm</div> | <div class="gray time" >9:00 pm - 9:30 pm</div> | <div class="time">9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong class="name">Presley Mattea</strong> <div class="time">8:00 pm - 9:00 pm</div> | <div class="gray time">9:00 pm - 9:30 pm</div> | <div class="time">9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong class="name">Yousuf Mohamed</strong> <div class="time">8:00 pm - 9:00 pm</div> | <div class="gray time">9:00 pm - 9:30 pm</div> | <div class="time">9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong class="name">Nicolas Maynard</strong> <div class="time">8:00 pm - 9:00 pm</div> | <div class="gray time">9:00 pm - 9:30 pm</div> | <div class="time">9:30 pm - 11:00 pm</div> </div>
+            <div class="item flex"> <strong class="name">Xiao Guo</strong> <div class="time">8:00 pm - 9:00 pm</div> | <div class="gray time">9:00 pm - 9:30 pm</div> | <div class="time">9:30 pm - 11:00 pm</div> </div>
         </div>
     </div>
 </div>
@@ -37,7 +37,7 @@
     <div class="page" *ngFor="let day of days" [attr.data-day]="day" [class.active]="currentDay === day.id">
         <strong class="center">{{ day.id === 1 ? 'Monday' : day.id === 2 ? 'Tuesday' : day.id === 3 ? 'Wednesday' : day.id === 4 ? 'Thursday' : day.id === 5 ? 'Friday' : day.id === 6 ? 'Saturday' : 'Sunday' }}</strong>
         <br>
-        <p class="subtext blue">Note: Type 'null' if no shift</p>
+        <p class="subtext blue">Note: Type 'N/A' if no shift</p>
         <label><span>Shift 1</span><input type="text" name="" required></label>
         <label><span>Shift 2</span><input type="text" name="" required></label>
         <label><span>Shift 3</span><input type="text" name="" required></label>
@@ -50,7 +50,7 @@
     </div>
     <br>
     
-    <div class="flex gap-10 end">
+    <div class="flex gap-10 form-btn">
         <button type="button" class="btn btn-red" (click)="hideForm()">cancel</button>
         <button type="submit" class="btn-blue white" >add</button>
     </div>

@@ -6,3 +6,31 @@ Entity Framework ORM
 .NET Core (C#)
 SQL
 Angular
+
+Database: 
+attendance-system.SQL
+
+Table Users;
+username: name + auto-increment id, auto generated. primary-key
+name,
+role: admin or user
+status: present or absent, default: absent;
+createdAt
+
+create trigger when new user is inserted in the database except for admin
+Table Schedules;
+day (Mon, Tue, Wed, Thurs, Fri, Sat, Sun): [
+    shift-1, default null
+    shift-2, default null
+    shift-3, default null
+    break 
+]
+username primary-key, foreign-key
+scheduleId primary-key
+
+Plan:
+Entity-framework
+
+
+
+

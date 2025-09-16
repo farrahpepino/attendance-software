@@ -10,7 +10,7 @@ button{
 }
 
 input {
-    width: 700px;
+    width: 100%;
     padding: 8px;
     border-radius: 16px;
     border: solid 1px #003A6B;
@@ -152,6 +152,12 @@ select{
 .green{
     color: green;
 }
+
+.name{
+    width: 200px;
+    text-align: left;
+}
+
 
 .page { display: none; }
 

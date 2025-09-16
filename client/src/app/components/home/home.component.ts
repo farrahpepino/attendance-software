@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
   currentDate: Date = new Date();
 
-
   onSelect(event: Event){
     (event.target as HTMLSelectElement).selectedIndex = -1;
   }
