@@ -28,13 +28,11 @@
     margin-bottom: 10px;
 }
 
-.flex{
-    display: flex;
-}
+@media (max-width:400px) {
 
-@media(max-width:400px){
     .add-form{
         width: 350px;
         height: 380px;
     }
+    
 }

@@ -12,9 +12,11 @@ import { MatIconModule } from '@angular/material/icon';
 export class SchedulesComponent {
   activeDay = 1;
   showForm = false;
+
   viewForm(){
     this.showForm = true;
   }
+
   hideForm(){
     this.showForm = false;
   }

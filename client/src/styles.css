@@ -1,11 +1,48 @@
 body{
-    font-family: Arial;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
     font-size: 1rem;
     margin: 0;
+    height: 100%;
 }
 
 button{
     font-size: 1rem;
+}
+
+input {
+    width: 700px;
+    padding: 8px;
+    border-radius: 16px;
+    border: solid 1px #003A6B;
+    background-color: transparent;
+    outline-color: #003A6B;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+label span {
+    min-width: 80px; 
+}
+
+select{
+    width: 35px;
+    border: none;
+    outline: none;
+}
+
+/* classes */
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red{
+    background-color: red;
 }
 
 .btn{
@@ -16,12 +53,12 @@ button{
     background-color: transparent;
 }
 
-.btn:hover{
+.btn.active{
     background-color: #003A6B;
     color: rgb(255,255,255, 0.9);
 }
 
-.btn.active{
+.btn:hover{
     background-color: #003A6B;
     color: rgb(255,255,255, 0.9);
 }
@@ -39,9 +76,17 @@ button{
     color: black;
 }
 
+.btn-green{
+    padding: 8px 0px;
+    width: 80px;
+    border-radius: 16px;
+    border: solid 1px green;
+    color: rgb(255,255,255, 0.9);
+    background-color: green;
+}
 
-.btn-red:hover{
-    color: red;
+.btn-green:hover{
+    border: solid 1px green;
     background-color: transparent;
 }
 
@@ -54,18 +99,9 @@ button{
     background-color: red;
 }
 
-.btn-green:hover{
-    border: solid 1px green;
+.btn-red:hover{
+    color: red;
     background-color: transparent;
-}
-
-.btn-green{
-    padding: 8px 0px;
-    width: 80px;
-    border-radius: 16px;
-    border: solid 1px green;
-    color: rgb(255,255,255, 0.9);
-    background-color: green;
 }
 
 .btn-transparent{
@@ -73,20 +109,9 @@ button{
     border: none;
 }
 
-.red{
-    color: red;
-}
-
-.white{
-    color: rgb(255,255,255, 0.9);
-}
-
-.gray{
-    color: #A9A9A9;
-}
-
-.green{
-    color: green;
+.center{
+    display: flex;
+    justify-content: center;
 }
 
 .circle{
@@ -95,48 +120,33 @@ button{
     border-radius: 50%;
 }
 
-.bg-green{
-    background-color: green;
+.col {
+    flex-direction: column;
 }
 
-.bg-red{
-    background-color: red;
+.container{
+    width: 100%;
+    margin: 20px;
+}
+
+.end {
+    justify-content: right;
 }
 
 .flex{
     display: flex;
 }
 
-.v-center{
-    align-items: center;
-}
-
-.col{
-    flex-direction: column;
-}
-
-label{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    align-items: center;
-}
-
-label span {
-    min-width: 80px; 
-}
-  
-input {
-    width: 700px;
-    padding: 8px;
-    border-radius: 16px;
-    border: solid 1px #003A6B;
-    background-color: transparent;
-    outline-color: #003A6B;
-}
-
 .gap-10{
     gap: 10px;
+}
+
+.gray{
+    color: #A9A9A9;
+}
+
+.green{
+    color: green;
 }
 
 .page { display: none; }
@@ -165,25 +175,26 @@ input {
     background-color: rgb(0,0,0, 0.1);
 }
 
-
-.center{
-    display: flex;
-    justify-content: center;
+.red{
+    color: red;
 }
 
-.container{
-    width: 100%;
-    margin: 20px;
+.v-center{
+    align-items: center;
 }
 
-select{
-    width: 35px;
-    border: none;
-    outline: none;
+.white{
+    color: rgb(255,255,255, 0.9);
 }
 
-.end {
-    justify-content: right;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
+
+
+
+
+
+
