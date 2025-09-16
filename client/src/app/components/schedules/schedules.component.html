@@ -8,47 +8,11 @@
     <div class="content">
         <div>
             <div class="item flex">
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 1}"
-                (click)="selectDay(1)">
-                    Mon
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 2}"
-                (click)="selectDay(2)">
-                    Tue
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 3}"
-                (click)="selectDay(3)">
-                    Wed
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 4}"
-                (click)="selectDay(4)">
-                    Thurs
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 5}"
-                (click)="selectDay(5)">
-                    Fri
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 6}"
-                (click)="selectDay(6)">
-                    Sat
-                </button>
-                <button 
-                class="btn"     
-                [ngClass]="{'active': activeDay === 7}"
-                (click)="selectDay(7)">
-                    Sun
+                <button *ngFor="let day of days"
+                        class="btn"
+                        [ngClass]="{'active': activeDay === day.id}"
+                        (click)="selectDay(day.id)">
+                  {{day.name.substring(0,3)}}
                 </button>
             </div>
             <br><br><br>
@@ -65,103 +29,30 @@
     <br>
     <strong>Add a tutor</strong>
     <br><br>
+    <form (ngSubmit)="submitForm($event)">
     <label for="name"><span>Name</span>
         <input type="text"/> 
     </label>
-
-    <!-- Monday -->
-    <div class="page active" data-day="1">
-        <br /> <br />
-        <strong class="center">Monday</strong>
-        <br />
+    <br><br>
+    <div class="page" *ngFor="let day of days" [attr.data-day]="day" [class.active]="currentDay === day.id">
+        <strong class="center">{{ day.id === 1 ? 'Monday' : day.id === 2 ? 'Tuesday' : day.id === 3 ? 'Wednesday' : day.id === 4 ? 'Thursday' : day.id === 5 ? 'Friday' : day.id === 6 ? 'Saturday' : 'Sunday' }}</strong>
+        <br>
         <label><span>Shift 1</span><input type="text"></label>
         <label><span>Shift 2</span><input type="text"></label>
         <label><span>Shift 3</span><input type="text"></label>
         <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Tuesday -->
-    <div class="page" data-day="2">
-        <br />
-        <strong>Tuesday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Wednesday -->
-    <div class="page" data-day="3">
-        <br />
-        <strong>Wednesday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Thursday -->
-    <div class="page" data-day="4">
-        <br />
-        <strong>Thursday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Friday -->
-    <div class="page" data-day="5">
-        <br />
-        <strong>Friday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Saturday -->
-    <div class="page" data-day="5">
-        <br />
-        <strong>Saturday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
-    <!-- Sunday -->
-    <div class="page" data-day="5">
-        <br />
-        <strong>Sunday</strong>
-        <br />
-        <br />
-        <label><span>Shift 1</span><input type="text"></label>
-        <label><span>Shift 2</span><input type="text"></label>
-        <label><span>Shift 3</span><input type="text"></label>
-        <label><span>Break</span><input type="text"></label>
-    </div>
-
+      </div>
     <br>
     <div class="pagination-controls center">
-        <button type="button" id="prev" class="btn-transparent"  mat-icon-button><mat-icon>arrow_back</mat-icon></button>
-        <button type="button" id="next" class="btn-transparent"  mat-icon-button><mat-icon>arrow_forward</mat-icon></button>
+        <button type="button" id="prev" class="btn-transparent"  mat-icon-button (click)="prev()"><mat-icon>arrow_back</mat-icon></button>
+        <button type="button" id="next" class="btn-transparent"  mat-icon-button (click)="forward()"><mat-icon>arrow_forward</mat-icon></button>
     </div>
     <br>
     
     <div class="flex gap-10 end">
         <button type="button" class="btn btn-red" (click)="hideForm()">cancel</button>
-        <button type="button" class="btn-blue white">add</button>
+        <button type="submit" class="btn-blue white" >add</button>
     </div>
+    </form>
 
 </div> 

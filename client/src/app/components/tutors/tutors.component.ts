@@ -7,6 +7,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   templateUrl: './tutors.component.html',
   styleUrl: './tutors.component.css'
 })
+
 export class TutorsComponent {
 
   onSelect(event: Event){
