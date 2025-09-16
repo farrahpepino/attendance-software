@@ -27,9 +27,14 @@
 
 <div class="add-form flex col" [class.hidden]="!showForm">
     <br>
-    <strong>Add a tutor</strong>
+    <div class="flex space-between v-center width">
+        <strong>Add a tutor</strong> 
+        <button class="btn-transparent circle-btn" (click)="hideForm()">X</button>
+    </div>
+    
     <br><br>
     <form (ngSubmit)="submitForm($event)">
+    <p class="subtext red">Error: Missing input</p>
     <label for="name"><span>Name</span>
         <input type="text"/> 
     </label>
@@ -37,7 +42,7 @@
     <div class="page" *ngFor="let day of days" [attr.data-day]="day" [class.active]="currentDay === day.id">
         <strong class="center">{{ day.id === 1 ? 'Monday' : day.id === 2 ? 'Tuesday' : day.id === 3 ? 'Wednesday' : day.id === 4 ? 'Thursday' : day.id === 5 ? 'Friday' : day.id === 6 ? 'Saturday' : 'Sunday' }}</strong>
         <br>
-        <p class="subtext blue">Note: Type 'N/A' if no shift</p>
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <label><span>Shift 1</span><input type="text" name="" required></label>
         <label><span>Shift 2</span><input type="text" name="" required></label>
         <label><span>Shift 3</span><input type="text" name="" required></label>
@@ -45,14 +50,13 @@
       
     <br>
     <div class="pagination-controls center">
-        <button type="button" id="prev" class="btn-transparent"  mat-icon-button (click)="prevPage()" [disabled]="day.id===1"><mat-icon>arrow_back</mat-icon></button>
-        <button type="button" id="next" class="btn-transparent"  mat-icon-button (click)="nextPage()" [disabled]="day.id===7"><mat-icon>arrow_forward</mat-icon></button>
+        <button type="button" id="prev" class="btn-gray"  mat-icon-button (click)="prevPage()" [disabled]="day.id===1"><mat-icon>arrow_back</mat-icon></button>
+        <button type="button" id="next" class="btn-gray"  mat-icon-button (click)="nextPage()" [disabled]="day.id===7"><mat-icon>arrow_forward</mat-icon></button>
     </div>
     <br>
     
-    <div class="flex gap-10 form-btn">
-        <button type="button" class="btn btn-red" (click)="hideForm()">cancel</button>
-        <button type="submit" class="btn-blue white" >add</button>
+    <div class="flex form-btn">
+        <button type="submit" class="btn-blue white">add</button>
     </div>
     </div>
     </form>

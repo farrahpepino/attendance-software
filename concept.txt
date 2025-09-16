@@ -1,6 +1,7 @@
 roles:
-- admin: add user to the database, send generated code to user
-- tutors: update attendance, email admin to call out
+- admin: add user to the database, send generated userId to user, admin is inserted in the database using MySql. Thinking of a 
+separate app for admin registration
+- tutors: update attendance, email admin to call out (?)
 
 Entity Framework ORM
 .NET Core (C#)
@@ -28,9 +29,10 @@ day (Mon, Tue, Wed, Thurs, Fri, Sat, Sun): [
 username primary-key, foreign-key
 scheduleId primary-key
 
+create trigger for every status update
+Table  logs 
+userId,
+status
+
 Plan:
 Entity-framework
-
-
-
-

@@ -1,9 +1,10 @@
 .add-form{
     background-color: #F0F0F0;
     width: 60%;
-    height: 520px;
+    height: 550px;
     border-radius: 12px;
     padding: 40px;
+    padding-top: 5px;
     position: fixed; 
     top: 50%;
     left: 50%;
@@ -11,7 +12,7 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     z-index: 5;
     visibility: visible;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .add-form.hidden{
@@ -47,6 +48,10 @@ span{
     text-align: left;
 }
 
+.width {
+    width: 100%;
+}
+
 @media (max-width:850px) {
 
     .add-form{
@@ -69,6 +74,10 @@ span{
         align-items: center;
         margin-bottom: 10px;
         gap: 1em;
+    }
+
+    .width{
+        width: 90%;
     }
     
 }
