@@ -15,8 +15,8 @@ namespace server.Services{
             return await _logRepository.GetAllLogs();
         }
 
-        public async Task<IEnumerable<Log>> GetAllLogsById(string userId){
-            return await _logRepository.GetAllLogsById(userId);
+        public async Task<IEnumerable<Log>> GetAllLogsByUserId(string userId){
+            return await _logRepository.GetAllLogsByUserId(userId);
         }
     }
     

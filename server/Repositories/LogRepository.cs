@@ -16,7 +16,7 @@ namespace server.Repositories{
         return await _context.Logs.ToListAsync();
         }
 
-        public async Task<IEnumerable<Log>> GetAllLogsById(string userId){
+        public async Task<IEnumerable<Log>> GetAllLogsByUserId(string userId){
         return await _context.Logs
                 .Where(l => l.UserId == userId)                             
                 .ToListAsync();
