@@ -1,19 +1,21 @@
+using server.Data;
+using server.Middlewares;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
+// DbContext
+builder.Services.AddDbContext<AppDbContext>(
+    options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    )
+);
 
 var app = builder.Build();
 
-builder.Services.
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
+app.UseMiddleware<GlobalExceptionHandler>();
 app.UseHttpsRedirection();
 
-
 app.Run();
-

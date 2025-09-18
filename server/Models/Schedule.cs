@@ -1,11 +1,24 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace server.Models{
+    
+    [Table("Schedules")]
     public class Schedule{
-        public string Id {get; set;}
-        public string UserId {get; set;}
-        public string Day {get; set;}
-        public string Shift1 {get; set;}
-        public string Shift2 {get; set;}
-        public string Shift3 {get; set;}
-        public string Break {get; set;}
+        [Key]
+        [Column(TypeName = "varchar(36)")]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
+        [Required]
+        public string Day { get; set; }
+
+        public string? Shift1 { get; set; }
+        public string? Shift2 { get; set; }
+        public string? Shift3 { get; set; }
+        public string? Break { get; set; }
     }
 }
