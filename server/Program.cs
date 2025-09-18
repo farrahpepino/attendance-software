@@ -24,10 +24,12 @@ builder.Services.AddScoped<ScheduleService>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 builder.Services.AddScoped<LogService>();
 
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
 app.UseMiddleware<GlobalExceptionHandler>();
 app.UseHttpsRedirection();
+app.MapControllers();
 
 app.Run();
