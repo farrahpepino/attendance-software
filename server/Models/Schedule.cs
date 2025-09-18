@@ -14,7 +14,7 @@ namespace server.Models{
         public User User { get; set; }
 
         [Required]
-        public string Day { get; set; }
+        public string Day { get; set; } = string.Empty;
 
         public string? Shift1 { get; set; }
         public string? Shift2 { get; set; }

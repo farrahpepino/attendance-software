@@ -36,3 +36,12 @@ status
 
 Plan:
 Entity-framework
+
+
+1. schedule bulk
+
+2. get users:
+    - present
+    - absent
+
+3. get schedules for each day

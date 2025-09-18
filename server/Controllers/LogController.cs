@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace server.Controllers
 {
     [ApiController]
+    [Route("[controller]")] 
     public class LogController : ControllerBase{
         private readonly LogService _logService;
 
