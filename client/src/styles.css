@@ -3,6 +3,7 @@ body{
     font-size: 1rem;
     margin: 0;
     height: 100%;
+    background-color: #F8F8F8;
 }
 
 button{
@@ -78,8 +79,8 @@ select{
 }
 
 .btn-blue:hover{
-    background-color: transparent;
-    color: black;
+    background-color: #336699;
+    border: solid 1px #336699;
 }
 
 .btn-gray{

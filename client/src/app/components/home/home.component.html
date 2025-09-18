@@ -5,8 +5,8 @@
     
     <div class="content">
         <div class="flex gap-10 v-center">
-            <button type="button" class="btn-blue white">Present</button>
-            <button type="button" class="btn">Absent</button>
+            <button type="button" class="btn"  [ngClass]="status === Active.Present ? ['btn-blue', 'white'] : []" (click)="toggleStatus('present')">Present</button>
+            <button type="button" class="btn"  [ngClass]="status === Active.Absent ? ['btn-blue', 'white'] : []" (click)="toggleStatus('absent')">Absent</button>
             <div>{{currentDate | date: "fullDate"}}</div>
         </div>
 
