@@ -7,7 +7,7 @@ namespace  server.Models{
     public class User{
         [Key]
         [Column(TypeName = "varchar(36)")]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
 
         public int UserCode { get; set; }
 

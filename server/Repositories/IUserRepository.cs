@@ -6,7 +6,7 @@ namespace server.Repositories
     {
         Task<User?> LoginUser(int userCode);
         Task<List<User>> GetAllUsers();
-        Task AddUser (string name);
+        Task CreateUser (string name);
         Task UpdateStatus(string id, string status);
         Task DeleteUser(string id);
     }

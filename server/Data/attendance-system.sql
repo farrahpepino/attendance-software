@@ -4,16 +4,16 @@ CREATE DATABASE AttendanceDb;
 USE AttendanceDb;
 
 CREATE TABLE Users(
-Id VARCHAR(36) NOT NULL PRIMARY KEY, 
-UserCode INT NOT NULL UNIQUE,
-Name VARCHAR(100) NOT NULL,
-Role VARCHAR(5) NOT NULL CHECK (Role IN ('admin','user')),
-Status VARCHAR(7) NOT NULL DEFAULT 'absent' CHECK (Status IN ('present','absent')),
-CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    Id VARCHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    UserCode INT NOT NULL UNIQUE,
+    Name VARCHAR(100) NOT NULL,
+    Role VARCHAR(5) NOT NULL CHECK (Role IN ('admin','user')),
+    Status VARCHAR(7) NOT NULL DEFAULT 'absent' CHECK (Status IN ('present','absent')),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Schedules (
-	Id VARCHAR(36) NOT NULL PRIMARY KEY, 
+    Id VARCHAR(36) PRIMARY KEY DEFAULT (UUID()),
     UserId VARCHAR(36) NOT NULL,
     Day ENUM('Mon','Tue','Wed','Thurs','Fri','Sat','Sun') NOT NULL,
     Shift1 VARCHAR(50) DEFAULT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE Schedules (
 );
 
 CREATE TABLE Logs (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Id VARCHAR(36) PRIMARY KEY DEFAULT (UUID()),
     UserId VARCHAR(36) NOT NULL,
     Status VARCHAR(7) NOT NULL CHECK (Status IN ('present','absent')),
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -39,7 +39,7 @@ FOR EACH ROW
 BEGIN
     IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status THEN
         INSERT INTO Logs (UserId, Status)
-        VALUES (NEW.Id, NEW.Status);
+        VALUES (OLD.Id, NEW.Status);
     END IF;
 END$$
 

@@ -6,7 +6,8 @@ namespace server.Models{
     [Table("Logs")]
     public class Log{
         [Key]
-        public int Id { get; set; }
+        [Column(TypeName = "varchar(36)")] 
+        public string Id { get; set; }
 
         [ForeignKey("User")]
         public string UserId { get; set; }

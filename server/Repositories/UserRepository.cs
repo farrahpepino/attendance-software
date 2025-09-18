@@ -21,7 +21,7 @@ namespace server.Repositories
             return users;
         }
 
-        public async Task AddUser(string name){
+        public async Task CreateUser(string name){
             var random = new Random();
             int code;
             bool exists;

@@ -7,7 +7,7 @@ namespace server.Models{
     public class Schedule{
         [Key]
         [Column(TypeName = "varchar(36)")]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
 
         [ForeignKey("User")]
         public string UserId { get; set; }
