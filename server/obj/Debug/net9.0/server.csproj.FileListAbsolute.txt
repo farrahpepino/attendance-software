@@ -1,0 +1,8 @@
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.csproj.AssemblyReference.cache
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.GeneratedMSBuildEditorConfig.editorconfig
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.AssemblyInfoInputs.cache
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.AssemblyInfo.cs
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.csproj.CoreCompileInputs.cache
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.MvcApplicationPartsAssemblyInfo.cs
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.MvcApplicationPartsAssemblyInfo.cache
+/Users/farrahpepino/Documents/GitHub/attendance-software/server/obj/Debug/net9.0/server.sourcelink.json
