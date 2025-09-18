@@ -1,6 +1,9 @@
 using server.Data;
 using server.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
 
 namespace server.Repositories
 {
@@ -16,7 +19,7 @@ namespace server.Repositories
             return user;
         }
 
-        public async Task<List<User>> GetAllUsers(){
+        public async Task<IEnumerable<User>> GetAllUsers(){
             var users = await _context.Users.ToListAsync();
             return users;
         }
