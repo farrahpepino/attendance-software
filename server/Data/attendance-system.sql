@@ -1,0 +1,46 @@
+DROP DATABASE IF EXISTS AttendanceDb;
+CREATE DATABASE AttendanceDb;
+
+USE AttendanceDb;
+
+CREATE TABLE Users(
+Id VARCHAR(36) NOT NULL PRIMARY KEY, 
+UserCode INT NOT NULL UNIQUE,
+Name VARCHAR(100) NOT NULL,
+Role VARCHAR(5) NOT NULL CHECK (Role IN ('admin','user')),
+Status VARCHAR(7) NOT NULL DEFAULT 'absent' CHECK (Status IN ('present','absent')),
+CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Schedules (
+	Id VARCHAR(36) NOT NULL PRIMARY KEY, 
+    UserId VARCHAR(36) NOT NULL,
+    Day ENUM('Mon','Tue','Wed','Thurs','Fri','Sat','Sun') NOT NULL,
+    Shift1 VARCHAR(50) DEFAULT NULL,
+    Shift2 VARCHAR(50) DEFAULT NULL,
+    Shift3 VARCHAR(50) DEFAULT NULL,
+    Break VARCHAR(50) DEFAULT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);
+
+CREATE TABLE Logs (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    UserId VARCHAR(36) NOT NULL,
+    Status VARCHAR(7) NOT NULL CHECK (Status IN ('present','absent')),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);
+
+DELIMITER $$
+
+CREATE TRIGGER AddLog
+AFTER UPDATE ON Users
+FOR EACH ROW
+BEGIN
+    IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status THEN
+        INSERT INTO Logs (UserId, Status)
+        VALUES (NEW.Id, NEW.Status);
+    END IF;
+END$$
+
+DELIMITER ;
