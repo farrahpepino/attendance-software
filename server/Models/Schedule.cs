@@ -7,6 +7,5 @@ namespace server.Models{
         public string Shift2 {get; set;}
         public string Shift3 {get; set;}
         public string Break {get; set;}
-        public DateTime CreatedAt {get; set;}
     }
 }
