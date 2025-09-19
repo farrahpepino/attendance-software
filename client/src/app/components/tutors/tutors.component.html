@@ -2,6 +2,10 @@
 <div class="container">
     <br>
     <strong class="center">Tutors</strong>
+    <ng-container *ngIf="users.length===0">
+        <br><br><br><br><br>
+        <div class="gray">No tutors registered.</div>
+    </ng-container>
     <div class="content flex col">
         <div class="item flex" *ngFor="let user of users">
             <strong class="name">{{user.name}}</strong>

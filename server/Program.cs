@@ -35,6 +35,7 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<AuthService>();
 
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserService>();
 

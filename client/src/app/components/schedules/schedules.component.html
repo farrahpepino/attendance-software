@@ -16,7 +16,14 @@
                 </button>
             </div>
             <br><br><br>
+
+            <ng-container *ngIf="schedules.length === 0 ">
+                <div class="gray">No tutors scheduled.</div>
+            </ng-container>
+              
+          
             <div class="item flex"  *ngFor="let schedule of schedules"> 
+              
                 <strong class="name" 
                 *ngIf="
                 (activeDay === 1 && (schedule.mon_Shift1 || schedule.mon_Shift2 || schedule.mon_Shift3)) ||
@@ -35,6 +42,7 @@
                     <div class="time" *ngIf="schedule.mon_Shift3">{{ schedule.mon_Shift3 }}</div>
                     <div class="gray time" *ngIf="schedule.mon_Break">{{ schedule.mon_Break }}</div>
                 </ng-container>
+
                   
                 <ng-container *ngIf="activeDay === 2">
                     <div class="time" *ngIf="schedule.tue_Shift1">{{ schedule.tue_Shift1 }}</div>

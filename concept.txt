@@ -43,6 +43,8 @@ Entity-framework
 
 2. get schedules for each day - ✅ 
 
-3. create event schedule the next day, reset status to absent if old status was present
+3. create event schedule the next day, reset status to absent if old status was present - ✅ 
 
-4. no tutors / schedule UI
+4. no tutors / schedule UI - ✅ 
+
+5. auth
