@@ -37,10 +37,10 @@ status
 Plan:
 Entity-framework
 
-1. schedule bulk
-
-2. get users:
+1. get users:
     - present
     - absent
 
-3. get schedules for each day
+2. get schedules for each day
+
+3. create event schedule the next day, reset status to absent if old status was present

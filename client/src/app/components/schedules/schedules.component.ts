@@ -16,7 +16,6 @@ import { Day } from '../../models/Day';
 export class SchedulesComponent {
   showForm = false;
   activeDay = 1;
-  currentDay = 1;
 
   days: Day[] = [
     { id: 1, name: 'Monday' },
@@ -27,8 +26,6 @@ export class SchedulesComponent {
     { id: 6, name: 'Saturday' },
     { id: 7, name: 'Sunday' },
   ];
-
-  shifts = ['Shift 1', 'Shift 2', 'Shift 3', 'Break'];
 
   viewForm() {
     this.showForm = true;
@@ -50,11 +47,4 @@ export class SchedulesComponent {
     this.showForm = false;
   }
 
-  prevPage(){
-    if (this.currentDay > 1) this.currentDay--;
-  }
-  
-  nextPage(){
-    if (this.currentDay >= 1) this.currentDay++;
-  }
 }
