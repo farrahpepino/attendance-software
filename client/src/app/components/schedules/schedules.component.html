@@ -90,7 +90,7 @@
     </div>
     
     <form [formGroup]="scheduleForm" (ngSubmit)="submitForm()">
-        <p class="subtext red center">Error: Missing input</p>
+        <p class="subtext red center" *ngIf="submitted && scheduleForm.invalid">Error: Missing input</p>
        
         <input type="text" formControlName="name" placeholder="Name" required />
         <br />

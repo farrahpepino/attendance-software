@@ -60,3 +60,35 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER DeleteSchedule
+AFTER DELETE ON Users
+FOR EACH ROW
+BEGIN
+    DELETE FROM Schedules 
+    WHERE UserCode = OLD.UserCode;
+END$$
+
+DELIMITER ;
+
+CREATE EVENT ResetStatus
+ON SCHEDULE
+
+
+DELIMITER $$
+
+CREATE EVENT ResetStatus
+ON SCHEDULE EVERY 1 DAY
+STARTS CONCAT(CURDATE() + INTERVAL 1 DAY, ' 00:00:00')
+DO
+BEGIN
+    UPDATE Users
+    SET status = 'absent'
+    WHERE status = 'present';
+END$$
+
+DELIMITER ;

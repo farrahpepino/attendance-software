@@ -12,8 +12,8 @@ export class ScheduleService {
   private apiUrl = 'http://localhost:5131/schedule';
   constructor(private http: HttpClient, private userService: UserService) { }
 
-  createSchedule(data: Schedule): Observable<Schedule> {
-    return this.http.post<Schedule>(`${this.apiUrl}`, data);
+  createSchedule(data: Schedule) {
+    return this.http.post(`${this.apiUrl}`, data);
   }
 
   getAllSchedules(): Observable<Schedule[]> {

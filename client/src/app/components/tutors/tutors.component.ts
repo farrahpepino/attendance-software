@@ -18,12 +18,24 @@ export class TutorsComponent implements OnInit {
       this.userService.getAllUsers().subscribe({
         next: (data)=>{
           this.users = data
-          console.log('All tutors:', this.users);
         }
       });
   }
 
-  onSelect(event: Event){
+  onSelect(event: Event, user: User){
+    
+    const value = (event.target as HTMLSelectElement).value;
+
+    if (value === 'present' || value === 'absent') {
+      this.userService.updateStatus(user.id, value).subscribe(() => {
+        user.status = value;
+      });
+    } else if (value === 'remove') {
+      this.userService.deleteUser(user.id).subscribe(() => {
+        this.users = this.users.filter(u => u.id !== user.id);
+      });
+    }
     (event.target as HTMLSelectElement).selectedIndex = -1;
+
   }
 }

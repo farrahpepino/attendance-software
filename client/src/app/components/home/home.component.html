@@ -11,16 +11,19 @@
         </div>
 
         <div class="content flex col">
-            <div class="item flex" *ngFor="let user of users">
-                <strong class="name">{{user.name}}</strong>
-                <div class="circle bg-green" *ngIf="user.status=='present'"></div> 
-                <div class="circle bg-red" *ngIf="user.status=='absent'"></div> 
-                <select aria-label="Choose action" (change)="onSelect($event)">
-                    <option disabled selected hidden></option>
-                    <option value="present">Mark present</option>
-                    <option value="absent">Mark absent</option>
-                </select>
-            </div>
+            <ng-container *ngFor="let user of users">
+                <div class="item flex" 
+                *ngIf="status === Active.Present && user.status=='present' || status === Active.Absent && user.status=='absent'">
+                    <strong class="name">{{user.name}}</strong>
+                    <div class="circle bg-green" *ngIf="user.status=='present'"></div> 
+                    <div class="circle bg-red" *ngIf="user.status=='absent'"></div> 
+                    <select aria-label="Choose action"  (change)="onSelect($event, user)">
+                        <option disabled selected hidden></option>
+                        <option value="present">Mark present</option>
+                        <option value="absent">Mark absent</option>
+                    </select>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

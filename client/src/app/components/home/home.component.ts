@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
       this.userService.getAllUsers().subscribe({
         next: (data)=>{
           this.users = data
-          console.log('All tutors:', this.users);
         }
       });
   }
@@ -40,7 +39,17 @@ export class HomeComponent implements OnInit {
       this.status = Active.Absent;
     }
   }
-  onSelect(event: Event){
+  
+  onSelect(event: Event, user: User){
+    
+    const value = (event.target as HTMLSelectElement).value;
+
+    if (value === 'present' || value === 'absent') {
+      this.userService.updateStatus(user.id, value).subscribe(() => {
+        user.status = value;
+      });
+    } 
     (event.target as HTMLSelectElement).selectedIndex = -1;
   }
+
 }

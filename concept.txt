@@ -37,9 +37,9 @@ status
 Plan:
 Entity-framework
 
-1. get users:
-    - present
-    - absent
+1. get users: - ✅ 
+    - present - ✅ 
+    - absent- ✅ 
 
 2. get schedules for each day - ✅ 
 

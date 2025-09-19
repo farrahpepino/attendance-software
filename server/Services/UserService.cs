@@ -26,10 +26,7 @@ namespace server.Services{
         public async Task DeleteUser(string id){
             await _userRepository.DeleteUser(id);
         }
-
-
     }
-
 }
 
         

@@ -14,4 +14,16 @@ export class UserService {
   getAllUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.apiUrl}`);
   }
+
+  updateStatus(id: string, status: string){
+    return this.http.put(`${this.apiUrl}/${id}/status`, `"${status}"`, 
+    {headers: { 'Content-Type': 'application/json' }});
+  }
+
+  deleteUser(id: string){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }
+
+

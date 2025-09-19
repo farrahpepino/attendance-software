@@ -7,7 +7,7 @@
             <strong class="name">{{user.name}}</strong>
             <div class="circle bg-green" *ngIf="user.status=='present'"></div> 
             <div class="circle bg-red" *ngIf="user.status=='absent'"></div> 
-            <select aria-label="Choose action" (change)="onSelect($event)">
+            <select aria-label="Choose action" (change)="onSelect($event, user)">
                 <option disabled selected hidden></option>
                 <option value="present">Mark present</option>
                 <option value="absent">Mark absent</option>

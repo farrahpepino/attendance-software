@@ -25,7 +25,7 @@ namespace server.Controllers{
         [HttpPut("{id}/status")]
         public async Task<IActionResult> UpdateStatus(string id, [FromBody] string status){
             await _userService.UpdateStatus(id, status);
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]

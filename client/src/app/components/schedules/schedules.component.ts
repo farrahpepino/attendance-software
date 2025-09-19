@@ -22,7 +22,6 @@ export class SchedulesComponent implements OnInit {
       this.scheduleService.getAllSchedules().subscribe({
         next: (data: Schedule[]) => {
           this.schedules = data
-          console.log('All schedules:', this.schedules);
         },
         error: err => console.error('Error getting schedules:', err)
       })
@@ -70,6 +69,7 @@ export class SchedulesComponent implements OnInit {
   });
 
   showForm = false;
+  submitted = false;
   activeDay = 1;
 
   days: Day[] = [
@@ -100,13 +100,11 @@ export class SchedulesComponent implements OnInit {
 
   submitForm(){
     const schedule: Schedule = {};
+    this.submitted = true;
 
     Object.keys(this.scheduleForm.controls).forEach(key => {
       let value = this.scheduleForm.get(key)?.value;
-
-      // value = value.replace(/\s+/g, '').toLowerCase();
-
-      if (value === 'null'){
+      if (value.replace(/\s+/g, '').toLowerCase() === 'null'){
         value = undefined;
       }  
       schedule[key as keyof Schedule] = value;
@@ -115,8 +113,8 @@ export class SchedulesComponent implements OnInit {
 
     this.scheduleService.createSchedule(schedule).subscribe({
       next: res => {
-        console.log('Schedule saved', res);
         this.showForm = false;
+        window.location.reload();
       },
       error: err => console.error('Error saving schedule:', err)
     });
