@@ -20,7 +20,9 @@ namespace server.Repositories
         }
 
         public async Task<IEnumerable<User>> GetAllUsers(){
-            var users = await _context.Users.ToListAsync();
+            var users = await _context.Users
+                        .Where(u => u.Role == "user")
+                        .ToListAsync();
             return users;
         }
 

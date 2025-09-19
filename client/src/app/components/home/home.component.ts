@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/User';
 
 enum Active {
   Absent = 'absent',
@@ -13,7 +15,19 @@ enum Active {
   styleUrl: './home.component.css'
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  constructor (private userService: UserService){}
+  users: User[] = []
+
+  ngOnInit(): void {
+      this.userService.getAllUsers().subscribe({
+        next: (data)=>{
+          this.users = data
+          console.log('All tutors:', this.users);
+        }
+      });
+  }
+
   currentDate: Date = new Date();
   status: Active = Active.Present;
   Active = Active;
