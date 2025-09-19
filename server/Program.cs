@@ -1,10 +1,16 @@
 using server.Data;
 using server.Middlewares;
+using server.Models;
 using server.Repositories;
 using server.Services;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer; 
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+var secret = builder.Configuration["Jwt:Secret"];
+
 
 builder.Services.AddCors(options =>
 {
@@ -26,6 +32,9 @@ builder.Services.AddDbContext<AppDbContext>(
     )
 );
 
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<AuthService>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserService>();
 
@@ -35,7 +44,31 @@ builder.Services.AddScoped<ScheduleService>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 builder.Services.AddScoped<LogService>();
 
+builder.Services.AddScoped<IJwtService, JwtService>();
+
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddControllers();
+
+
+
+// configure jwt authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false, // set true for issuer validation
+        ValidateAudience = false, // set true for audience validation
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret!))
+    };
+});
+
 
 var app = builder.Build();
 

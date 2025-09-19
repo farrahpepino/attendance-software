@@ -14,11 +14,6 @@ namespace server.Repositories
             _context = context;
         }
 
-        public async Task<User> LoginUser(int userCode){
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserCode == userCode);
-            return user;
-        }
-
         public async Task<IEnumerable<User>> GetAllUsers(){
             var users = await _context.Users
                         .Where(u => u.Role == "user")

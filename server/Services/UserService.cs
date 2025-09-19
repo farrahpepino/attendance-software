@@ -11,10 +11,6 @@ namespace server.Services{
             _userRepository = userRepository;
         }
 
-        public async Task<User?> LoginUser(int userCode){
-            return await _userRepository.LoginUser(userCode);
-        }
-
         public async Task<IEnumerable<User>> GetAllUsers(){
             return await _userRepository.GetAllUsers();
         }
