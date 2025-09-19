@@ -8,7 +8,5 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  CreateUser(){
-    
-  }
+
 }

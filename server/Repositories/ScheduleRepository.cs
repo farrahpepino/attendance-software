@@ -18,13 +18,23 @@ namespace server.Repositories {
             return await _context.Schedules.ToListAsync();
         }
 
-        public async Task<Schedule> CreateSchedule(Schedule schedule)
+    public async Task<Schedule> CreateSchedule(Schedule schedule){
+        var random = new Random();
+        int code;
+        bool exists;
+
+        do
         {
-            _context.Schedules.Add(schedule);
-            await _context.SaveChangesAsync();
-            return schedule;
-        }
+            code = random.Next(10000000, 100000000);
+            exists = await _context.Schedules.AnyAsync(s => s.UserCode == code);
+        } while (exists);
+
+        schedule.UserCode = code;
+
+        _context.Schedules.Add(schedule);
+        await _context.SaveChangesAsync();
+
+        return schedule;
     }
-
-
+    }
 }

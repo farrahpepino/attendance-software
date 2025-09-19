@@ -18,11 +18,7 @@ namespace server.Services{
         public async Task<IEnumerable<User>> GetAllUsers(){
             return await _userRepository.GetAllUsers();
         }
-
-        public async Task CreateUser (string name){
-            await _userRepository.CreateUser(name);
-        }
-
+        
         public async Task UpdateStatus(string id, string status){
             await _userRepository.UpdateStatus(id, status);
         }

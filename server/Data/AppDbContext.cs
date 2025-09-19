@@ -19,9 +19,6 @@ namespace server.Data{
                 .Property(u => u.Role)
                 .HasMaxLength(5);
 
-            modelBuilder.Entity<Schedule>()
-                .Property(s => s.Day)
-                .HasConversion<string>();
         }
     }
 }

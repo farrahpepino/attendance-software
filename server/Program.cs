@@ -6,6 +6,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev",
+        builder =>
+        {
+            builder.WithOrigins("*") 
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(
     options =>
@@ -30,6 +41,7 @@ var app = builder.Build();
 
 app.UseMiddleware<GlobalExceptionHandler>();
 app.UseHttpsRedirection();
+app.UseCors("AllowAngularDev"); 
 app.MapControllers();
 
 app.Run();

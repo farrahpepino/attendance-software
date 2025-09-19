@@ -28,90 +28,91 @@
         <button class="btn-transparent" (click)="hideForm()">X</button>
     </div>
     
-    <form id="scheduleForm" (submit)="submitForm($event)">
+    <form [formGroup]="scheduleForm" (ngSubmit)="submitForm()">
         <p class="subtext red center">Error: Missing input</p>
        
-        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" formControlName="name" placeholder="Name" required />
         <br />
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
+        
         <!-- Monday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Monday</strong>
-        <input type="text" name="monday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="monday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="monday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="monday_break" placeholder="Break" required />
+        <input type="text" formControlName="mon_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="mon_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="mon_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="mon_break" placeholder="Break" required />
         </div>
         <br /><br />
 
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Tuesday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Tuesday</strong>
-        <input type="text" name="tuesday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="tuesday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="tuesday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="tuesday_break" placeholder="Break" required />
+        <input type="text" formControlName="tue_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="tue_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="tue_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="tue_break" placeholder="Break" required />
         </div>
         <br /><br />
       
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Wednesday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Wednesday</strong>
-        <input type="text" name="wednesday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="wednesday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="wednesday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="wednesday_break" placeholder="Break" required />
+        <input type="text" formControlName="wed_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="wed_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="wed_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="wed_break" placeholder="Break" required />
         </div>
         <br /><br />
       
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Thursday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Thursday</strong>
-        <input type="text" name="thursday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="thursday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="thursday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="thursday_break" placeholder="Break" required />
+        <input type="text" formControlName="thu_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="thu_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="thu_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="thu_break" placeholder="Break" required />
         </div>
         <br /><br />
       
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Friday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Friday</strong>
-        <input type="text" name="friday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="friday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="friday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="friday_break" placeholder="Break" required />
+        <input type="text" formControlName="fri_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="fri_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="fri_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="fri_break" placeholder="Break" required />
         </div>
         <br /><br />
       
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Saturday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Saturday</strong>
-        <input type="text" name="saturday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="saturday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="saturday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="saturday_break" placeholder="Break" required />
+        <input type="text" formControlName="sat_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="sat_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="sat_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="sat_break" placeholder="Break" required />
         </div>
         <br /><br />
 
-        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Sunday -->
+        <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Sunday</strong>
-        <input type="text" name="sunday_shift1" placeholder="Shift 1" required />
-        <input type="text" name="sunday_shift2" placeholder="Shift 2" required />
-        <input type="text" name="sunday_shift3" placeholder="Shift 3" required />
-        <input type="text" name="sunday_break" placeholder="Break" required />
+        <input type="text" formControlName="sun_shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="sun_shift2" placeholder="Shift 2" required />
+        <input type="text" formControlName="sun_shift3" placeholder="Shift 3" required />
+        <input type="text" formControlName="sun_break" placeholder="Break" required />
         </div>
         <br /><br />
       
         <div class="flex form-btn">
-            <button type="submit" class="btn-blue white">add</button>
+            <button type="submit" class="btn-blue white" [disabled]="!scheduleForm.valid">add</button>
         </div>
     </form>
       

@@ -9,11 +9,13 @@ namespace server.Models
         [Key]
         [Column(TypeName = "varchar(36)")]
         public string Id { get; set; } = Guid.NewGuid().ToString();
+        
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
 
-        [ForeignKey("User")]
-        [Column(TypeName = "varchar(36)")]
-        public string UserId { get; set; }
-        public User User { get; set; }
+
+        public int UserCode { get; set; }
 
         // Monday
         [Column(TypeName = "varchar(20)")]

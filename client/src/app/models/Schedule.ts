@@ -1,0 +1,33 @@
+export interface Schedule {
+    id?: string;
+    name?: string;
+    userCode?: string;
+    mon_shift1?: string ;
+    mon_shift2?: string ;
+    mon_shift3?: string ;
+    mon_break?: string ;
+    tue_shift1?: string ;
+    tue_shift2?: string ;
+    tue_shift3?: string ;
+    tue_break?: string ;
+    wed_shift1?: string ;
+    wed_shift2?: string ;
+    wed_shift3?: string ;
+    wed_break?: string ;
+    thu_shift1?: string ;
+    thu_shift2?: string ;
+    thu_shift3?: string ;
+    thu_break?: string ;
+    fri_shift1?: string ;
+    fri_shift2?: string ;
+    fri_shift3?: string ;
+    fri_break?: string ;
+    sat_shift1?: string ;
+    sat_shift2?: string ;
+    sat_shift3?: string ;
+    sat_break?: string ;
+    sun_shift1?: string ;
+    sun_shift2?: string ;
+    sun_shift3?: string ;
+    sun_break?: string ;
+}

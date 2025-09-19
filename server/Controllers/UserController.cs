@@ -22,12 +22,6 @@ namespace server.Controllers{
             return Ok(users);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> CreateUser([FromBody] string name){
-            await _userService.CreateUser(name);
-            return Ok();
-        }
-
         [HttpPut("{id}/status")]
         public async Task<IActionResult> UpdateStatus(string id, [FromBody] string status){
             await _userService.UpdateStatus(id, status);

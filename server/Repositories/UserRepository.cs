@@ -24,28 +24,6 @@ namespace server.Repositories
             return users;
         }
 
-        public async Task CreateUser(string name){
-            var random = new Random();
-            int code;
-            bool exists;
-
-            do
-            {
-                code = random.Next(10000000, 100000000);
-                exists = await _context.Users.AnyAsync(u => u.UserCode == code);
-            } while (exists);
-
-            var user = new User
-            {
-                Name = name,
-                UserCode = code
-            };
-
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-        }                           
-
-
         public async Task UpdateStatus(string id, string status){
             var user = await _context.Users.FindAsync(id);
             if (user != null)
