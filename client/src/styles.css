@@ -3,8 +3,8 @@ body{
     font-size: 1rem;
     margin: 0;
     height: 100%;
-    background-color: gray;
-    /* background-color: #F8F8F8; */
+    /* background-color: gray; */
+    background-color: #F8F8F8;
 }
 
 button{
@@ -13,7 +13,7 @@ button{
 }
 
 input {
-    width: 100%;
+    width: 93%;
     padding: 8px;
     border-radius: 16px;
     border: solid 1px #003A6B;

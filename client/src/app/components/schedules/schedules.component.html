@@ -25,15 +25,13 @@
     <br>
     <div class="flex space-between v-center width center">
         <strong>Add a tutor</strong> 
-        <button class="btn-transparent circle-btn" (click)="hideForm()">X</button>
+        <button class="btn-transparent" (click)="hideForm()">X</button>
     </div>
     
     <form id="scheduleForm" (submit)="submitForm($event)">
         <p class="subtext red center">Error: Missing input</p>
-        <label class="flex gap center">
-          Name
-          <input type="text" name="name" required />
-        </label>
+       
+        <input type="text" name="name" placeholder="Name" required />
         <br />
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'N/A' if no shift.</p>
         <!-- Monday -->
