@@ -37,7 +37,6 @@ status
 Plan:
 Entity-framework
 
-
 1. schedule bulk
 
 2. get users:
