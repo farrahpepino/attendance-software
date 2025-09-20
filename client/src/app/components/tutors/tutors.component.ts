@@ -13,8 +13,11 @@ import { CommonModule } from '@angular/common';
 export class TutorsComponent implements OnInit {
   constructor (private userService: UserService){}
   users: User[] = []
+  currentUser: User | null = null;
+
 
   ngOnInit(): void {
+      this.currentUser = this.userService.getCurrentUser();
       this.userService.getAllUsers().subscribe({
         next: (data)=>{
           this.users = data

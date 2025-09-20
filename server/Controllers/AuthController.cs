@@ -16,10 +16,10 @@ namespace server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<LoginResponse>> LoginUser(int userCode){
+        public async Task<ActionResult<LoginResponse>> LoginUser([FromBody] int userCode){
             var result = await _authService.LoginUser(userCode);
             if (result==null){
-                return NotFound();
+                return NotFound(null);
             }
             return Ok(result);
         }

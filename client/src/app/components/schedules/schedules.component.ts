@@ -5,6 +5,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Day } from '../../models/Day';
 import { ScheduleService } from '../../services/schedule.service';
 import { Schedule } from '../../models/Schedule';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-schedules',
@@ -15,10 +17,11 @@ import { Schedule } from '../../models/Schedule';
 })
 
 export class SchedulesComponent implements OnInit {
-  constructor(private scheduleService: ScheduleService){}
+  constructor(private scheduleService: ScheduleService, private userService: UserService){}
   schedules:Schedule[]=[]
-
+  currentUser: User | null = null
   ngOnInit(): void {
+      this.currentUser = this.userService.getCurrentUser();
       this.scheduleService.getAllSchedules().subscribe({
         next: (data: Schedule[]) => {
           this.schedules = data

@@ -24,6 +24,11 @@ export class UserService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
+  getCurrentUser(){
+    const userJson = localStorage.getItem('currentUser');
+    return userJson ? JSON.parse(userJson) : null;
+  }
+
 }
 
 

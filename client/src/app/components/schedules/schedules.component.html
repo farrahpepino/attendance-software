@@ -1,7 +1,7 @@
 <app-navbar />
 <div class="container">
     <div class="flex">
-        <button type="button" class="btn-blue white" (click)="viewForm()">+ tutor</button>
+        <button type="button" class="btn-blue white" (click)="viewForm()" *ngIf="currentUser?.role==='admin'">+ tutor</button>
     </div>
     <br>
     <strong class="center">Schedules</strong>
