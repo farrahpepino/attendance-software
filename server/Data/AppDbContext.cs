@@ -7,7 +7,6 @@ namespace server.Data{
         public DbSet<Schedule> Schedules {get; set;}
         public DbSet<Log> Logs {get; set;}
 
-
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){ }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){   
@@ -18,7 +17,6 @@ namespace server.Data{
             modelBuilder.Entity<User>()
                 .Property(u => u.Role)
                 .HasMaxLength(5);
-
         }
     }
 }
