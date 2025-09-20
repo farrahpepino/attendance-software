@@ -3,22 +3,28 @@ import { HomeComponent } from './components/home/home.component';
 import { SchedulesComponent } from './components/schedules/schedules.component';
 import { TutorsComponent } from './components/tutors/tutors.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { authGuard } from './guards/auth.guard';
+import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        component: AuthComponent
+        component: AuthComponent,
+        canActivate: [loginGuard]
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [authGuard]
     },
     {
         path: 'schedules',
-        component: SchedulesComponent
+        component: SchedulesComponent,
+        canActivate: [authGuard]
     },
     {
         path: 'tutors',
-        component: TutorsComponent
+        component: TutorsComponent,
+        canActivate: [authGuard]
     }
 ];

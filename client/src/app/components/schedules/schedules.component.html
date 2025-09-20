@@ -37,52 +37,52 @@
                     {{schedule.name}}
                 </strong>
                 <ng-container *ngIf="activeDay === 1">
-                    <div class="time" *ngIf="schedule.mon_Shift1">{{ schedule.mon_Shift1 }}</div> 
-                    <div class="time" *ngIf="schedule.mon_Shift2">{{ schedule.mon_Shift2 }}</div> 
-                    <div class="time" *ngIf="schedule.mon_Shift3">{{ schedule.mon_Shift3 }}</div>
+                    <div class="time" *ngIf="schedule.mon_Shift1">{{ schedule.mon_Shift1 }}</div> <div *ngIf="schedule.mon_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.mon_Shift2">{{ schedule.mon_Shift2 }}</div> <div *ngIf="schedule.mon_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.mon_Shift3">{{ schedule.mon_Shift3 }}</div> <div *ngIf="schedule.mon_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.mon_Break">{{ schedule.mon_Break }}</div>
                 </ng-container>
 
                   
                 <ng-container *ngIf="activeDay === 2">
-                    <div class="time" *ngIf="schedule.tue_Shift1">{{ schedule.tue_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.tue_Shift2">{{ schedule.tue_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.tue_Shift3">{{ schedule.tue_Shift3 }}</div>
-                    <div class="gray time" *ngIf="schedule.tue_Break">{{ schedule.tue_Break }}</div>
+                    <div class="time" *ngIf="schedule.tue_Shift1">{{ schedule.tue_Shift1 }}</div> <div *ngIf="schedule.tue_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.tue_Shift2">{{ schedule.tue_Shift2 }}</div> <div *ngIf="schedule.tue_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.tue_Shift3">{{ schedule.tue_Shift3 }}</div> <div *ngIf="schedule.tue_Shift3">|</div>
+                    <div class="gray time" *ngIf="schedule.tue_Break">{{ schedule.tue_Break }}</div> 
                 </ng-container>
                   
                 <ng-container *ngIf="activeDay === 3">
-                    <div class="time" *ngIf="schedule.wed_Shift1">{{ schedule.wed_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.wed_Shift2">{{ schedule.wed_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.wed_Shift3">{{ schedule.wed_Shift3 }}</div>
+                    <div class="time" *ngIf="schedule.wed_Shift1">{{ schedule.wed_Shift1 }}</div> <div *ngIf="schedule.wed_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.wed_Shift2">{{ schedule.wed_Shift2 }}</div> <div *ngIf="schedule.wed_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.wed_Shift3">{{ schedule.wed_Shift3 }}</div> <div *ngIf="schedule.wed_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.wed_Break">{{ schedule.wed_Break }}</div>
                  </ng-container>
                   
                 <ng-container *ngIf="activeDay === 4">
-                    <div class="time" *ngIf="schedule.thu_Shift1">{{ schedule.thu_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.thu_Shift2">{{ schedule.thu_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.thu_Shift3">{{ schedule.thu_Shift3 }}</div>
+                    <div class="time" *ngIf="schedule.thu_Shift1">{{ schedule.thu_Shift1 }}</div> <div *ngIf="schedule.thu_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.thu_Shift2">{{ schedule.thu_Shift2 }}</div> <div *ngIf="schedule.thu_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.thu_Shift3">{{ schedule.thu_Shift3 }}</div> <div *ngIf="schedule.thu_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.thu_Break">{{ schedule.thu_Break }}</div>
                 </ng-container>
                   
                 <ng-container *ngIf="activeDay === 5">
-                    <div class="time" *ngIf="schedule.fri_Shift1">{{ schedule.fri_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.fri_Shift2">{{ schedule.fri_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.fri_Shift3">{{ schedule.fri_Shift3 }}</div>
+                    <div class="time" *ngIf="schedule.fri_Shift1">{{ schedule.fri_Shift1 }}</div> <div *ngIf="schedule.fri_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.fri_Shift2">{{ schedule.fri_Shift2 }}</div> <div *ngIf="schedule.fri_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.fri_Shift3">{{ schedule.fri_Shift3 }}</div> <div *ngIf="schedule.fri_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.fri_Break">{{ schedule.fri_Break }}</div>
                 </ng-container>
                   
-                <ng-container *ngIf="activeDay === 6">
-                    <div class="time" *ngIf="schedule.sat_Shift1">{{ schedule.sat_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.sat_Shift2">{{ schedule.sat_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.sat_Shift3">{{ schedule.sat_Shift3 }}</div>
+                <ng-container *ngIf="activeDay === 6"> 
+                    <div class="time" *ngIf="schedule.sat_Shift1">{{ schedule.sat_Shift1 }}</div> <div *ngIf="schedule.sat_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.sat_Shift2">{{ schedule.sat_Shift2 }}</div> <div *ngIf="schedule.sat_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.sat_Shift3">{{ schedule.sat_Shift3 }}</div> <div *ngIf="schedule.sat_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.sat_Break">{{ schedule.sat_Break }}</div>
                 </ng-container>
                   
                 <ng-container *ngIf="activeDay === 7">
-                    <div class="time" *ngIf="schedule.sun_Shift1">{{ schedule.sun_Shift1 }}</div>
-                    <div class="time" *ngIf="schedule.sun_Shift2">{{ schedule.sun_Shift2 }}</div>
-                    <div class="time" *ngIf="schedule.sun_Shift3">{{ schedule.sun_Shift3 }}</div>
+                    <div class="time" *ngIf="schedule.sun_Shift1">{{ schedule.sun_Shift1 }}</div> <div *ngIf="schedule.sun_Shift1">|</div>
+                    <div class="time" *ngIf="schedule.sun_Shift2">{{ schedule.sun_Shift2 }}</div> <div *ngIf="schedule.sun_Shift2">|</div>
+                    <div class="time" *ngIf="schedule.sun_Shift3">{{ schedule.sun_Shift3 }}</div> <div *ngIf="schedule.sun_Shift3">|</div>
                     <div class="gray time" *ngIf="schedule.sun_Break">{{ schedule.sun_Break }}</div>
                 </ng-container>
             </div>
@@ -107,7 +107,7 @@
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Monday</strong>
-        <input type="text" formControlName="mon_Shift1" placeholder="Shift 1" required />
+        <input type="text" formControlName="mon_Shift1" placeholder="Shift 1" required /> 
         <input type="text" formControlName="mon_Shift2" placeholder="Shift 2" required />
         <input type="text" formControlName="mon_Shift3" placeholder="Shift 3" required />
         <input type="text" formControlName="mon_Break" placeholder="Break" required />
