@@ -39,7 +39,7 @@ CREATE TRIGGER AddLog
 AFTER UPDATE ON Users
 FOR EACH ROW
 BEGIN
-    IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status THEN
+    IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status AND NEW.Status = "present" THEN
         INSERT INTO Logs (UserId, Status)
         VALUES (OLD.Id, NEW.Status);
     END IF;

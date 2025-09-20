@@ -31,7 +31,7 @@ namespace server.Controllers{
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(string id){
             await _userService.DeleteUser(id);
-            return NoContent();
+            return Ok();
         }
     }
 }

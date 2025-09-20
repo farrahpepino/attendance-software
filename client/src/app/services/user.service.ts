@@ -21,7 +21,7 @@ export class UserService {
   }
 
   deleteUser(id: string){
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`, {headers: { 'Content-Type': 'application/json' }});
   }
 
   getCurrentUser(){
