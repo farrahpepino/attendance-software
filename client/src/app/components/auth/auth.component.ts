@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AuthComponent {
   constructor(private authService: AuthService, private router: Router){}
   loggedIn = true;
+
   form = new FormGroup({
     userCode: new FormControl('')
   });
@@ -34,6 +35,7 @@ export class AuthComponent {
         console.error('Error logging in:', err)
       }
     });
+
   }
 
 }

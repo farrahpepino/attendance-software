@@ -1,34 +1,27 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 
-namespace server.Middlewares
-{
-    public class GlobalExceptionHandler
-    {
+namespace server.Middlewares{
+    public class GlobalExceptionHandler{
         private readonly ILogger<GlobalExceptionHandler> _logger;
         private readonly RequestDelegate _next;
 
-        public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger, RequestDelegate next)
-        {
+        public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger, RequestDelegate next){
             _logger = logger;
             _next = next;
         }
 
-        public async Task Invoke(HttpContext context)
-        {
-            try
-            {
+        public async Task Invoke(HttpContext context){
+            try{
                 await _next(context);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 _logger.LogError(ex, "Unhandled exception.");
 
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = "application/json";
 
-                var errorResponse = new
-                {
+                var errorResponse = new{
                     status = context.Response.StatusCode,
                     error = "An unexpected error occurred",
                     detail = ex.Message,

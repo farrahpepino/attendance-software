@@ -35,7 +35,6 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<AuthService>();
 
-
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserService>();
 
@@ -49,7 +48,6 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddControllers();
-
 
 
 // configure jwt authentication

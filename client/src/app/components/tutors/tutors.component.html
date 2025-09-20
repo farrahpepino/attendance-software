@@ -10,7 +10,6 @@
         <div class="item flex" *ngFor="let user of users">
             <strong class="name">{{user.name}}</strong>
             <div *ngIf="currentUser?.role==='admin'">{{user.userCode}}</div>
-
             <div class="circle bg-green" *ngIf="user.status=='present'"></div> 
             <div class="circle bg-red" *ngIf="user.status=='absent'"></div> 
             <select aria-label="Choose action" (change)="onSelect($event, user)" *ngIf="user.id === currentUser?.id || currentUser?.role==='admin'">

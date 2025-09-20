@@ -3,7 +3,6 @@ body{
     font-size: 1rem;
     margin: 0;
     height: 100%;
-    /* background-color: gray; */
     background-color: #F8F8F8;
 }
 
@@ -209,7 +208,6 @@ select{
 
 .space-between {
     justify-content: space-between;
-
 }
 
 .subtext {

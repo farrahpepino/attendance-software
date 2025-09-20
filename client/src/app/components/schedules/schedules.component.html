@@ -24,16 +24,16 @@
           
             <div class="item flex"  *ngFor="let schedule of schedules"> 
               
-                <strong class="name" 
-                *ngIf="
+                <strong 
+                class="name" 
+                *ngIf = "
                 (activeDay === 1 && (schedule.mon_Shift1 || schedule.mon_Shift2 || schedule.mon_Shift3)) ||
                 (activeDay === 2 && (schedule.tue_Shift1 || schedule.tue_Shift2 || schedule.tue_Shift3)) ||
                 (activeDay === 3 && (schedule.wed_Shift1 || schedule.wed_Shift2 || schedule.wed_Shift3)) ||
                 (activeDay === 4 && (schedule.thu_Shift1 || schedule.thu_Shift2 || schedule.thu_Shift3)) ||
                 (activeDay === 5 && (schedule.fri_Shift1 || schedule.fri_Shift2 || schedule.fri_Shift3)) ||
                 (activeDay === 6 && (schedule.sat_Shift1 || schedule.sat_Shift2 || schedule.sat_Shift3)) ||
-                (activeDay === 7 && (schedule.sun_Shift1 || schedule.sun_Shift2 || schedule.sun_Shift3))
-                ">
+                (activeDay === 7 && (schedule.sun_Shift1 || schedule.sun_Shift2 || schedule.sun_Shift3)) ">
                     {{schedule.name}}
                 </strong>
                 <ng-container *ngIf="activeDay === 1">
@@ -103,7 +103,6 @@
         <input type="text" formControlName="name" placeholder="Name" required />
         <br />
         
-        <!-- Monday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Monday</strong>
@@ -114,7 +113,6 @@
         </div>
         <br /><br />
 
-        <!-- Tuesday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Tuesday</strong>
@@ -125,7 +123,6 @@
         </div>
         <br /><br />
       
-        <!-- Wednesday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Wednesday</strong>
@@ -136,7 +133,6 @@
         </div>
         <br /><br />
       
-        <!-- Thursday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Thursday</strong>
@@ -147,7 +143,6 @@
         </div>
         <br /><br />
       
-        <!-- Friday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Friday</strong>
@@ -158,7 +153,6 @@
         </div>
         <br /><br />
       
-        <!-- Saturday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Saturday</strong>
@@ -169,7 +163,6 @@
         </div>
         <br /><br />
 
-        <!-- Sunday -->
         <p class="subtext blue">Format: Type '9:00 am - 9:30 pm' or 'null' if no shift.</p>
         <div class="flex col gap">
         <strong>Sunday</strong>

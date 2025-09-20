@@ -1,6 +1,5 @@
 namespace server.Services{
-     public interface IJwtService
-    {
+    public interface IJwtService{
         string GenerateToken(int userCode);
     }
 }

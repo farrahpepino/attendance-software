@@ -28,11 +28,6 @@ button:disabled{
     z-index: 1;
 }
 
-.time {
-    text-align: left;
-    width: 150px;
-}
-
 .form-btn{
     justify-content: right;
 }
@@ -52,6 +47,11 @@ span{
     text-align: left;
 }
 
+.time {
+    text-align: left;
+    width: 150px;
+}
+
 .width {
     width: 100%;
 }
@@ -61,10 +61,6 @@ span{
     .add-form{
         width: 80%;
         height: 97vh;
-    }
-
-    span{
-        width: 100px;
     }
 
     .form-btn{
@@ -78,6 +74,10 @@ span{
         gap: 1em;
     }
 
+    span{
+        width: 100px;
+    }
+    
     .width{
         width: 90%;
     }

@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
   constructor (private userService: UserService){}
   users: User[] = []
   currentUser: User | null = null;
+  currentDate: Date = new Date();
+  status: Active = Active.Present;
+  Active = Active;
 
   ngOnInit(): void {
       this.currentUser = this.userService.getCurrentUser();
@@ -28,10 +31,6 @@ export class HomeComponent implements OnInit {
         }
       });
   }
-
-  currentDate: Date = new Date();
-  status: Active = Active.Present;
-  Active = Active;
 
   toggleStatus(status: string){
     if (status === 'present'){
@@ -43,9 +42,7 @@ export class HomeComponent implements OnInit {
   }
   
   onSelect(event: Event, user: User){
-    
     const value = (event.target as HTMLSelectElement).value;
-
     if (value === 'present' || value === 'absent') {
       this.userService.updateStatus(user.id, value).subscribe(() => {
         user.status = value;
@@ -53,5 +50,4 @@ export class HomeComponent implements OnInit {
     } 
     (event.target as HTMLSelectElement).selectedIndex = -1;
   }
-
 }

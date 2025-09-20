@@ -4,15 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace server.Controllers
-{
+namespace server.Controllers{
     [ApiController]
     [Route("[controller]")] 
     public class LogController : ControllerBase{
         private readonly LogService _logService;
-
-        public LogController(LogService logService)
-        {
+        public LogController(LogService logService){
             _logService = logService;
         }
 

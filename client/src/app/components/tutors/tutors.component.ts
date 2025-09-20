@@ -15,20 +15,17 @@ export class TutorsComponent implements OnInit {
   users: User[] = []
   currentUser: User | null = null;
 
-
   ngOnInit(): void {
-      this.currentUser = this.userService.getCurrentUser();
-      this.userService.getAllUsers().subscribe({
-        next: (data)=>{
-          this.users = data
-        }
-      });
+    this.currentUser = this.userService.getCurrentUser();
+    this.userService.getAllUsers().subscribe({
+      next: (data)=>{
+        this.users = data
+      }
+    });
   }
 
   onSelect(event: Event, user: User){
-    
     const value = (event.target as HTMLSelectElement).value;
-
     if (value === 'present' || value === 'absent') {
       this.userService.updateStatus(user.id, value).subscribe(() => {
         user.status = value;
@@ -39,6 +36,5 @@ export class TutorsComponent implements OnInit {
       });
     }
     (event.target as HTMLSelectElement).selectedIndex = -1;
-
   }
 }

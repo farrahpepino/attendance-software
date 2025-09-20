@@ -16,7 +16,6 @@
         </ng-container>
 
         <div class="content flex col">
-            
             <ng-container *ngFor="let user of users">
                 <div class="item flex" 
                 *ngIf="status === Active.Present && user.status=='present' || status === Active.Absent && user.status=='absent'">

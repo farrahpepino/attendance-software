@@ -20,6 +20,19 @@ export class SchedulesComponent implements OnInit {
   constructor(private scheduleService: ScheduleService, private userService: UserService){}
   schedules:Schedule[]=[]
   currentUser: User | null = null
+  showForm = false;
+  submitted = false;
+  activeDay = 1;
+  days: Day[] = [
+    { id: 1, name: 'Monday' },
+    { id: 2, name: 'Tuesday' },
+    { id: 3, name: 'Wednesday' },
+    { id: 4, name: 'Thursday' },
+    { id: 5, name: 'Friday' },
+    { id: 6, name: 'Saturday' },
+    { id: 7, name: 'Sunday' },
+  ];
+
   ngOnInit(): void {
       this.currentUser = this.userService.getCurrentUser();
       this.scheduleService.getAllSchedules().subscribe({
@@ -67,23 +80,8 @@ export class SchedulesComponent implements OnInit {
     sun_Shift2: new FormControl(''),
     sun_Shift3: new FormControl(''),
     sun_Break: new FormControl(''),
-
-
+  
   });
-
-  showForm = false;
-  submitted = false;
-  activeDay = 1;
-
-  days: Day[] = [
-    { id: 1, name: 'Monday' },
-    { id: 2, name: 'Tuesday' },
-    { id: 3, name: 'Wednesday' },
-    { id: 4, name: 'Thursday' },
-    { id: 5, name: 'Friday' },
-    { id: 6, name: 'Saturday' },
-    { id: 7, name: 'Sunday' },
-  ];
 
   viewForm() {
     this.showForm = true;
@@ -111,7 +109,6 @@ export class SchedulesComponent implements OnInit {
         value = undefined;
       }  
       schedule[key as keyof Schedule] = value;
-
     });
 
     this.scheduleService.createSchedule(schedule).subscribe({
@@ -122,5 +119,4 @@ export class SchedulesComponent implements OnInit {
       error: err => console.error('Error saving schedule:', err)
     });
   }
-
 }
