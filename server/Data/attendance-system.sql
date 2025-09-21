@@ -39,7 +39,7 @@ CREATE TRIGGER AddLog
 AFTER UPDATE ON Users
 FOR EACH ROW
 BEGIN
-    IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status AND NEW.Status = "present" THEN
+    IF NEW.Role <> 'admin' AND NEW.Status <> OLD.Status THEN
         INSERT INTO Logs (UserId, Status)
         VALUES (OLD.Id, NEW.Status);
     END IF;
@@ -49,7 +49,6 @@ DELIMITER ;
 
 DELIMITER $$
 
-DELIMITER $$
 
 CREATE TRIGGER InsertUser
 AFTER INSERT ON Schedules

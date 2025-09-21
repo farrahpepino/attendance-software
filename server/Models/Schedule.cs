@@ -13,8 +13,6 @@ namespace server.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
-
-
         public int UserCode { get; set; }
 
         // Monday

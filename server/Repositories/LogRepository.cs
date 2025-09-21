@@ -13,12 +13,15 @@ namespace server.Repositories{
         }
 
         public async Task<IEnumerable<Log>> GetAllLogs(){
-        return await _context.Logs.ToListAsync();
+        return await _context.Logs
+                .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date})
+                .Select(group => group.OrderByDescending(log => log.CreatedAt).FirstOrDefault())
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Log>> GetAllLogsByUserId(string userId){
         return await _context.Logs
-                .Where(l => l.UserId == userId)                             
+                .Where(log => log.UserId == userId)                             
                 .ToListAsync();
         }
     }
