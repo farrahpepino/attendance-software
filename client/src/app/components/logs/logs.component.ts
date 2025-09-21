@@ -3,7 +3,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { LogsService } from '../../services/logs.service';
 import { Log } from '../../models/Log';
 import { CommonModule } from '@angular/common';
-import { groupBy } from 'lodash'; 
 
 @Component({
   selector: 'app-logs',
