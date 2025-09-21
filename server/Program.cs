@@ -11,7 +11,6 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 var secret = builder.Configuration["Jwt:Secret"];
 
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularDev",
@@ -22,6 +21,7 @@ builder.Services.AddCors(options =>
                    .AllowAnyMethod();
         });
 });
+
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(
