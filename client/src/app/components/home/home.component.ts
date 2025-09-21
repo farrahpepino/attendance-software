@@ -18,13 +18,12 @@ enum Active {
 })
 
 export class HomeComponent implements OnInit {
-  constructor (private userService: UserService, private logsService: LogsService){}
+  constructor (private userService: UserService){}
   users: User[] = []
   currentUser: User | null = null;
   currentDate: Date = new Date();
   status: Active = Active.Present;
   Active = Active;
-  logs: Log[] | null = null
 
   ngOnInit(): void {
       this.currentUser = this.userService.getCurrentUser();
@@ -33,9 +32,6 @@ export class HomeComponent implements OnInit {
           this.users = data
         }
       });
-      this.logsService.getAllLogs().subscribe({
-        next: data=> {this.logs = data; console.log(data)}
-      })
   }
 
   toggleStatus(status: string){

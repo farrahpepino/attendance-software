@@ -1,0 +1,9 @@
+<app-navbar />
+
+<div *ngFor="let log of logs">
+    <div *ngIf="log.status==='present'">
+        {{log.user.name}} 
+        <div class="circle bg-green"></div>
+        {{log.createdAt | date: 'MMM dd, y'}}
+    </div>
+</div>

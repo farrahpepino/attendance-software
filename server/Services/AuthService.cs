@@ -13,14 +13,14 @@ namespace server.Services{
             _jwtService = jwtService;
         }
 
-        public async Task<LoginResponse?> LoginUser(int userCode){
+        public async Task<LoginDto?> LoginUser(int userCode){
             var user = await _authRepository.LoginUser(userCode);
             if (user==null){
                 return null;
             }
 
             var token = _jwtService.GenerateToken(userCode);
-            return new LoginResponse
+            return new LoginDto
             {
                 User = user,
                 Token = token
