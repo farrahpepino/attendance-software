@@ -21,19 +21,21 @@ export class LogsComponent implements OnInit {
       next: data => {
         this.logs = data;
 
-        const grouped = data.reduce((acc: any, log: Log) => {
-          const date = new Date(log.createdAt).toDateString(); 
-          if (!acc[date]) acc[date] = [];
+        const grouped = data.reduce((acc:any, log:Log)=>{
+          const date = new Date(log.createdAt).toDateString();
+          if (!acc[date]) acc[date]=[];
           acc[date].push(log);
           return acc;
         }, {});
-
+       
         this.groupedLogs = Object.keys(grouped).map(date => ({
-          date,
-          logs: grouped[date]
-        }));
+           date,
+           logs: grouped[date]
+         }))
+         .sort((firstItem, secondItem)=> new Date(secondItem.date).getTime()- new Date(firstItem.date).getTime());
       }
+
+      
     });
   }
-
 }
