@@ -48,3 +48,5 @@ Entity-framework
 4. no tutors / schedule UI - ✅ 
 
 5. auth
+
+6. delete logs if changed back to absent for that day

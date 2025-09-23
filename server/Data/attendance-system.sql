@@ -60,8 +60,6 @@ END$$
 
 DELIMITER ;
 
-
-
 DELIMITER $$
 
 CREATE TRIGGER DeleteSchedule
@@ -73,10 +71,6 @@ BEGIN
 END$$
 
 DELIMITER ;
-
-CREATE EVENT ResetStatus
-ON SCHEDULE
-
 
 DELIMITER $$
 
@@ -91,3 +85,26 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+CREATE TRIGGER UpdateLog
+AFTER UPDATE ON Users
+FOR EACH ROW
+BEGIN
+    IF OLD.Status = 'present' THEN
+        DELETE FROM Logs
+        WHERE DATE(Logs.CreatedAt) = CURDATE() AND
+        Id = (
+            SELECT Id FROM (
+                SELECT Id
+                FROM Logs
+                WHERE UserId = OLD.Id
+                ORDER BY CreatedAt DESC
+                LIMIT 1 
+            ) AS t
+        );
+    END IF;
+END $$
+
+DELIMITER ;
+
+
