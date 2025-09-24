@@ -13,7 +13,7 @@ namespace server.Repositories
         }
 
         public async Task<User?> LoginUser(int userCode){
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserCode == userCode);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserCode == userCode); //might cause the app to crash
             return user;
         }
 

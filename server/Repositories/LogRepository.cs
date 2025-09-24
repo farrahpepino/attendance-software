@@ -15,7 +15,7 @@ namespace server.Repositories{
         public async Task<IEnumerable<Log>> GetAllLogs(){
         return await _context.Logs
                 .Where(log => log.Status == "present")
-                .Include(log => log.User)
+                .Include(log => log.User) //only need userid and usernames
                 .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date})
                 .Select(group => group.OrderByDescending(log => log.CreatedAt).FirstOrDefault())
                 .ToListAsync();
