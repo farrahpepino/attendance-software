@@ -22,7 +22,7 @@ namespace server.Repositories
         }
 
         public async Task UpdateStatus(string id, string status){
-            var user = await _context.Users.FindAsync(id); // might cause the app to crash
+            var user = await _context.Users.FindAsync(id); 
             if (user != null)
             {
                 user.Status = status;

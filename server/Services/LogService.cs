@@ -11,7 +11,7 @@ namespace server.Services{
             _logRepository = logRepository;
         }
 
-        public async Task<IEnumerable<Log>> GetAllLogs(){
+        public async Task<IEnumerable<LogDto>> GetAllLogs(){
             return await _logRepository.GetAllLogs();
         }
 

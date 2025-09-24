@@ -11,8 +11,12 @@ namespace server.Services{
             _scheduleRepository = scheduleRepository;
         }
 
-        public async Task<IEnumerable<Schedule>> GetAllSchedules(){
-            return await _scheduleRepository.GetAllSchedules();
+        public async Task<List<Schedule>> GetAllSchedules(){
+            var list = new List<Schedule>();
+            await foreach (var schedule in _scheduleRepository.GetAllSchedules()){
+                list.Add(schedule);
+            }
+            return list;
         }
 
         public async Task<Schedule> CreateSchedule(Schedule schedule){

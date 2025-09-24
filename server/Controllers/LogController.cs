@@ -14,7 +14,7 @@ namespace server.Controllers{
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Log>>> GetAllLogs(){
+        public async Task<ActionResult<IEnumerable<LogDto>>> GetAllLogs(){
             var logs = await _logService.GetAllLogs();
             return Ok(logs);
         }

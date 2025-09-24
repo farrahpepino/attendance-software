@@ -13,9 +13,10 @@ namespace server.Repositories {
             _context = context;
         }
 
-          public async Task<IEnumerable<Schedule>> GetAllSchedules()
-        {
-            return await _context.Schedules.ToListAsync();
+        public async IAsyncEnumerable<Schedule> GetAllSchedules(){
+            await foreach(var schedule in _context.Schedules.AsAsyncEnumerable()){
+                yield return schedule;
+            }
         }
 
     public async Task<Schedule> CreateSchedule(Schedule schedule){

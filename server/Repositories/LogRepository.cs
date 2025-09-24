@@ -12,12 +12,22 @@ namespace server.Repositories{
             _context = context;
         }
 
-        public async Task<IEnumerable<Log>> GetAllLogs(){
+        public async Task<IEnumerable<LogDto>> GetAllLogs(){
         return await _context.Logs
                 .Where(log => log.Status == "present")
-                .Include(log => log.User) //only need userid and usernames
-                .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date})
-                .Select(group => group.OrderByDescending(log => log.CreatedAt).FirstOrDefault())
+                .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date, log.User.Name})
+                .Select(group => group
+                    .OrderByDescending(log => log.CreatedAt)
+                    .Select(log => new LogDto
+                    {
+                        Id = log.Id,
+                        UserId = log.UserId,
+                        Name = log.User.Name,
+                        Status = log.Status,
+                        CreatedAt = log.CreatedAt
+                    })
+                    .First() 
+                )
                 .ToListAsync();
         }
 

@@ -21,6 +21,7 @@ export class LogsComponent implements OnInit {
       next: data => {
         this.logs = data;
 
+        console.log(data);
         const grouped = data.reduce((acc:any, log:Log)=>{
           const date = new Date(log.createdAt).toDateString();
           if (!acc[date]) acc[date]=[];
@@ -34,8 +35,6 @@ export class LogsComponent implements OnInit {
          }))
          .sort((firstItem, secondItem)=> new Date(secondItem.date).getTime()- new Date(firstItem.date).getTime());
       }
-
-      
     });
   }
 }

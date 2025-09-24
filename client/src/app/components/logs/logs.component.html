@@ -9,7 +9,7 @@
         <br><br>
         <div *ngFor="let log of group.logs">
             <ng-container *ngIf="log.status==='present'">
-                <div class="flex item">{{ log.user!.name }}<div class="circle bg-green"></div></div>
+                <div class="flex item">{{ log.name }}<div class="circle bg-green"></div></div>
             </ng-container>
         </div>
         <br>

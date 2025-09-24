@@ -17,7 +17,7 @@ namespace server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Schedule>>> GetAllSchedules(){
+        public async Task<ActionResult<IAsyncEnumerable<Schedule>>> GetAllSchedules(){
             var schedules = await _scheduleService.GetAllSchedules();
             return Ok(schedules);
         }
