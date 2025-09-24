@@ -90,7 +90,7 @@ CREATE TRIGGER UpdateLog
 AFTER UPDATE ON Users
 FOR EACH ROW
 BEGIN
-    IF OLD.Status = 'present' THEN
+    IF NEW.Status = 'absent' THEN
         DELETE FROM Logs
         WHERE DATE(Logs.CreatedAt) = CURDATE() AND
         Id = (
