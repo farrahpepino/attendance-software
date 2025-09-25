@@ -18,8 +18,7 @@ namespace server.Repositories{
                 .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date, log.User.Name})
                 .Select(group => group
                     .OrderByDescending(log => log.CreatedAt)
-                    .Select(log => new LogDto
-                    {
+                    .Select(log => new LogDto{
                         Id = log.Id,
                         UserId = log.UserId,
                         Name = log.User.Name,
