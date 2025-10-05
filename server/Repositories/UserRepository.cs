@@ -22,7 +22,12 @@ namespace server.Repositories
         }
 
         public async Task UpdateStatus(string id, string status){
-            var user = await _context.Users.FindAsync(id); 
+            var user = await (
+                from u in _context.Users
+                where u.Id == id
+                select u
+                ).FirstOrDefaultAsync();
+
             if (user != null)
             {
                 user.Status = status;
@@ -32,7 +37,12 @@ namespace server.Repositories
         }
 
         public async Task DeleteUser(string id){
-            var user = await _context.Users.FindAsync(id);
+            var user = await (
+                from u in _context.Users
+                where u.Id == id
+                select u
+                ).FirstOrDefaultAsync();
+
             if (user != null)
             {
                 _context.Users.Remove(user);

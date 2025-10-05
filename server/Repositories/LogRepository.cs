@@ -13,27 +13,33 @@ namespace server.Repositories{
         }
 
         public async Task<IEnumerable<LogDto>> GetAllLogs(){
-        return await _context.Logs
-                .Where(log => log.Status == "present")
-                .GroupBy(log => new {log.UserId, Date = log.CreatedAt.Date, log.User.Name})
-                .Select(group => group
-                    .OrderByDescending(log => log.CreatedAt)
-                    .Select(log => new LogDto{
-                        Id = log.Id,
-                        UserId = log.UserId,
-                        Name = log.User.Name,
-                        Status = log.Status,
-                        CreatedAt = log.CreatedAt
-                    })
-                    .First() 
-                )
-                .ToListAsync();
+
+        var logs = await (
+                    from l in _context.Logs
+                    where l.Status == "present"
+                    join u in _context.Users on l.UserId equals u.Id
+                    group l by new { l.UserId, Date = l.CreatedAt.Date, u.Name } into g
+                    let latestLog = g.OrderByDescending(l => l.CreatedAt).First()
+                    select new LogDto
+                    {
+                        Id = latestLog.Id,
+                        UserId = latestLog.UserId,
+                        Name = g.Key.Name,
+                        Status = latestLog.Status,
+                        CreatedAt = latestLog.CreatedAt
+                    }).ToListAsync();
+
+        return logs;
         }
 
         public async Task<IEnumerable<Log>> GetAllLogsByUserId(string userId){
-        return await _context.Logs
-                .Where(log => log.UserId == userId)                             
-                .ToListAsync();
+        
+        var logs = await (
+                    from l in _context.Logs
+                    where l.UserId == userId
+                    select l
+                    ).ToListAsync();
+        return logs;
         }
     }
 }
